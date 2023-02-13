@@ -21,6 +21,8 @@ public class Cluster {
 
     private Timestamp finalDate;
 
+    private Boolean isCurrent;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "cluster", cascade = CascadeType.ALL)
     private List<Task> tasks;
 
@@ -79,5 +81,13 @@ public class Cluster {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public Boolean getCurrent() {
+        return isCurrent;
+    }
+
+    public void setCurrent(Boolean current) {
+        isCurrent = current;
     }
 }
