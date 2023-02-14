@@ -1,7 +1,7 @@
 package com.jin.taskmanager.config;
 
-import com.jin.taskmanager.model.Cluster;
-import com.jin.taskmanager.model.Person;
+import com.jin.taskmanager.model.Group;
+import com.jin.taskmanager.model.User;
 import com.jin.taskmanager.model.Task;
 import com.jin.taskmanager.repository.TaskRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -23,14 +23,14 @@ public class GeneralConfig {
 
         return args -> {
 
-            Cluster c1 = new Cluster(
+            Group c1 = new Group(
                 "SIP025",
                 "Esto es una prueba",
                 timestamp,
                 timestamp
             );
 
-            Person p1 = new Person(
+            User p1 = new User(
                     "Juan",
                     "juan@mail.com"
             );
