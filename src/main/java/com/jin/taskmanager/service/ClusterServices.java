@@ -34,8 +34,8 @@ public class ClusterServices {
         clusterRepository.deleteById(id);
     }
 
-    public void updateCluster(Cluster cluster){
-        clusterRepository.save(cluster);
+    public void updateCluster(Long id, Cluster cluster){
+        //in progress
     }
 
 }

@@ -34,7 +34,7 @@ public class TaskServices {
         taskRepository.deleteById(id);
     }
 
-    public void updateTask(Task task){
+    public void updateTask(Long id, Task task){
         // In progress
     }
 

@@ -3,10 +3,12 @@ package com.jin.taskmanager.service;
 import com.jin.taskmanager.model.Person;
 import com.jin.taskmanager.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+@Service
 public class PersonServices {
 
     private final PersonRepository personRepository;
@@ -16,7 +18,7 @@ public class PersonServices {
         this.personRepository = personRepository;
     }
 
-    public List<Person> getPerson(){
+    public List<Person> getPersons(){
         return personRepository.findAll();
     }
 
@@ -32,8 +34,8 @@ public class PersonServices {
         personRepository.deleteById(id);
     }
 
-    public void updatePerson(Person person){
-        personRepository.save(person);
+    public void updatePerson(Long id, Person person){
+        // in progress
     }
 
 }

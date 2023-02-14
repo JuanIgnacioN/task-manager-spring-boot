@@ -11,11 +11,11 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id")
     private Person person;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "cluster_id")
     private Cluster cluster;
     private String code;
@@ -26,8 +26,8 @@ public class Task {
     private Date implDate;
     private Long days;
     private Long hours;
-    private Double advance;
-    private Double realAdvance;
+    private double advance;
+    private double realAdvance;
     private String status;
     private String realStatus;
     private Boolean isHalfResource;
@@ -142,7 +142,7 @@ public class Task {
         return advance;
     }
 
-    public void setAdvance(Double advance) {
+    public void setAdvance(double advance) {
         this.advance = advance;
     }
 
@@ -150,7 +150,7 @@ public class Task {
         return realAdvance;
     }
 
-    public void setRealAdvance(Double realAdvance) {
+    public void setRealAdvance(double realAdvance) {
         this.realAdvance = realAdvance;
     }
 
