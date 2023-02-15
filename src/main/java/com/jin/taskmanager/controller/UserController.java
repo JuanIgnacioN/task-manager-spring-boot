@@ -4,7 +4,6 @@ import com.jin.taskmanager.model.User;
 import com.jin.taskmanager.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

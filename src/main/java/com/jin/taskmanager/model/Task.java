@@ -1,5 +1,7 @@
 package com.jin.taskmanager.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.jin.taskmanager.enums.Classification;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,11 +18,17 @@ public class Task {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "group_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Group group;
+
+    @Enumerated(EnumType.STRING)
+    private Classification classification;
+
     private String code;
     private String title;
     private Date startDate;
@@ -35,9 +43,12 @@ public class Task {
     private String realStatus;
     private Boolean isHalfResource;
 
-    public Task(User user, Group group, String code, String title, Date startDate, Date finalDate, Date startUatDate, Date implDate, Long days, Long hours, Double advance, Double realAdvance, String status, String realStatus, Boolean isHalfResource) {
+    public Task(){}
+
+    public Task(User user, Group group, Classification classification, String code, String title, Date startDate, Date finalDate, Date startUatDate, Date implDate, Long days, Long hours, Double advance, Double realAdvance, String status, String realStatus, Boolean isHalfResource) {
         this.user = user;
         this.group = group;
+        this.classification = classification;
         this.code = code;
         this.title = title;
         this.startDate = startDate;
@@ -52,5 +63,4 @@ public class Task {
         this.realStatus = realStatus;
         this.isHalfResource = isHalfResource;
     }
-
 }

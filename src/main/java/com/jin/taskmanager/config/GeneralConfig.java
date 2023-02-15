@@ -1,5 +1,6 @@
 package com.jin.taskmanager.config;
 
+import com.jin.taskmanager.enums.Classification;
 import com.jin.taskmanager.model.Group;
 import com.jin.taskmanager.model.User;
 import com.jin.taskmanager.model.Task;
@@ -23,21 +24,23 @@ public class GeneralConfig {
 
         return args -> {
 
-            Group c1 = new Group(
+            Group g1 = new Group(
                 "SIP025",
                 "Esto es una prueba",
                 timestamp,
-                timestamp
+                timestamp,
+                Boolean.TRUE
             );
 
-            User p1 = new User(
+            User u1 = new User(
                     "Juan",
                     "juan@mail.com"
             );
 
             Task t1 = new Task(
-                    p1,
-                    c1,
+                    u1,
+                    g1,
+                    Classification.GENERAL,
                     "code",
                     "title",
                     timestamp,

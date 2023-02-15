@@ -13,13 +13,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
     private String mail;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Task> tasks;
 
     public User(){}
 
